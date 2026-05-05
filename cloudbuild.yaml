@@ -21,3 +21,8 @@ steps:
       - '--allow-unauthenticated'
       - '--set-env-vars'
       - 'PROJECT_ID=whatsapp-bot-mila,FIRESTORE_DB_ID=db-clientes-contcertbr'
+
+      options:
+  logging: CLOUD_LOGGING_ONLY
+  # Adicione esta linha abaixo para garantir que ele use o comportamento regional
+  default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
