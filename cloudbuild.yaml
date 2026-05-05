@@ -1,9 +1,9 @@
 steps:
-  # 1. Build da imagem Docker
+  # 1. Build da imagem Docker (Apontando para a pasta backend)
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/workspace-mila', './backend']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/workspace-mila', '-f', 'backend/Dockerfile', './backend']
 
-  # 2. Push da imagem para o registro
+  # 2. Push da imagem
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/workspace-mila']
 
